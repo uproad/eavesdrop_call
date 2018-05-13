@@ -1,5 +1,10 @@
 # EveDropCall
 
+# WIP
+You can't install this Gem by gem command. Sorry. :-)
+
+
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/eve_drop_call`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
@@ -8,9 +13,7 @@ TODO: Delete this and the text above, and describe your gem
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'eve_drop_call'
-```
+> ~~gem 'eve_drop_call'~~
 
 And then execute:
 
@@ -18,7 +21,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install eve_drop_call
+   ~~$ gem install eve_drop_call~~
 
 ## Usage
 
