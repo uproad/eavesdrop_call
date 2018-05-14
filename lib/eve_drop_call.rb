@@ -1,6 +1,11 @@
 require "eve_drop_call/version"
+require "callstack"
+
+require 'fileutils'
 
 module EveDropCall
+  LOGGER = Callstack
+
   class << self
     def eavesdrop(_target_klass)
       _i, _c = _prepend_gem_module(_target_klass)
@@ -20,7 +25,7 @@ module EveDropCall
         _instance_methods.each do |_method|
           next unless _method[0] =~ /[a-z|A-Z]/
           define_method(_method) do |*args, &block|
-            puts "PrependMethods##{_method}"
+            LOGGER.puts "PrependMethods##{_method}"
             super(*args, &block)
           end
         end
@@ -30,7 +35,7 @@ module EveDropCall
         _class_methods.each do |_method|
           next unless _method[0] =~ /[a-z|A-Z]/
           define_method(_method) do |*args, &block|
-            puts "PrependMethods.#{_method}"
+            LOGGER.puts "PrependMethods.#{_method}"
             super(*args, &block)
           end
         end
