@@ -32,7 +32,9 @@ Or install it yourself as:
 
 Write this...
 
-```ruby:spec_helper.rb
+```ruby
+# spec_helper.rb
+
 RSpec.configure do |config|
   config.before :suite do
     EveDropCall.eavesdrop(TargetKlass)
@@ -43,7 +45,7 @@ RSpec.configure do |config|
 end
 ```
 
-$ rspec spec
+$ rspec spec  
 $ less tmp/evedropcall_stack.log
 
 ## Development
