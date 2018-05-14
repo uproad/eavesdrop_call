@@ -28,7 +28,8 @@ module EveDropCall
         _instance_methods.each do |_method|
           next unless _method[0] =~ /[a-z|A-Z]/
           define_method(_method) do |*args, &block|
-            LOGGER.puts "#{@@_target_klass_name}##{_method}"
+            trace_first = caller.find{|p| p.start_with?(@@current_dir) && !p.include?("spec_helper") }
+            LOGGER.push({ method_name: _method, last_call_path: trace_first, last_call_line: 0 })
             super(*args, &block)
           end
         end
@@ -38,7 +39,8 @@ module EveDropCall
         _class_methods.each do |_method|
           next unless _method[0] =~ /[a-z|A-Z]/
           define_method(_method) do |*args, &block|
-            LOGGER.puts "#{@@_target_klass_name}.#{_method}"
+            trace_first = caller.find{|p| p.start_with?(@@current_dir) && !p.include?("spec_helper") }
+            LOGGER.push({ method_name: _method, last_call_path: trace_first, last_call_line: 0 })
             super(*args, &block)
           end
         end
