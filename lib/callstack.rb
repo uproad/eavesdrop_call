@@ -8,7 +8,7 @@ class Callstack
   class << self
     def push(hash_data)
       @@stack[hash_data[:method_name]] ||= []
-      @@stack[hash_data[:method_name]] << hash_data[:last_call_line]
+      @@stack[hash_data[:method_name]] << hash_data[:last_call_line] unless @@stack[hash_data[:method_name]].include?(hash_data[:last_call_line])
       @@max_method_name_length = hash_data[:method_name].to_s.length if @@max_method_name_length < hash_data[:method_name].to_s.length
     end
 

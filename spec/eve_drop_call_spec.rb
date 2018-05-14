@@ -9,11 +9,13 @@ RSpec.describe EveDropCall do
       TargetKlass = Class.new do
         class << self
           def x
-            new.x
+            _object = new
+            _object.x.x.x
           end
         end
 
         def x
+          self
         end
       end
     end
