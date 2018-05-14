@@ -4,7 +4,7 @@ RSpec.describe EveDropCall do
   end
 
   describe '#eavesdrop' do
-    subject(:eavesdrop){ EveDropCall.eavesdrop(target) }
+    subject(:eavesdrop){ EveDropCall.eavesdrop(target, File.expand_path(File.dirname(__FILE__))) }
     let(:target) do
       TargetKlass = Class.new do
         class << self

@@ -8,8 +8,9 @@ module EveDropCall
   @@_target_klass_name = nil
 
   class << self
-    def eavesdrop(_target_klass)
+    def eavesdrop(_target_klass, _called_dir_path = File.expand_path(File.dirname(__FILE__)))
       @@_target_klass_name = _target_klass.to_s
+      @@current_dir = _called_dir_path
 
       _i, _c = _prepend_gem_module(_target_klass)
       _target_klass.prepend(_i)
