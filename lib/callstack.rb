@@ -2,12 +2,12 @@ class Callstack
   OUTPUT_DIR = 'tmp/'
   OUTPUT_FILE = 'evedropcall_stack.log'
 
-  @@stack = []
+  @@stack = {}
   @@max_method_name_length = 0
 
   class << self
     def push(hash_data)
-      @@stack << hash_data
+      @@stack[hash_data[:last_call_path]] = hash_data[:method_name]
       @@max_method_name_length = hash_data[:method_name].to_s.length if @@max_method_name_length < hash_data[:method_name].to_s.length
     end
 
@@ -16,7 +16,7 @@ class Callstack
     end
 
     def reset
-      @@stack = []
+      @@stack = {}
     end
 
     def output_path
@@ -26,8 +26,8 @@ class Callstack
     def dump(_file_path = output_path)
       FileUtils.mkdir_p OUTPUT_DIR
       open(_file_path, "w+") do |f|
-        @@stack.each do |row|
-          f.puts "#{row[:method_name].to_s.rjust(@@max_method_name_length)} : #{row[:last_call_path]}:#{row[:last_call_line]}"
+        @@stack.each do |stacktrace, method_name|
+          f.puts "#{method_name.to_s.rjust(@@max_method_name_length)} : #{stacktrace}}"
         end
       end
     end
