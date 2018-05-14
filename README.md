@@ -13,7 +13,9 @@ TODO: Delete this and the text above, and describe your gem
 
 Add this line to your application's Gemfile:
 
-> ~~gem 'eve_drop_call'~~
+```ruby
+gem 'eve_drop_call', git: 'git@github.com:uproad/eve_drop_call.git'
+```
 
 And then execute:
 
@@ -21,11 +23,28 @@ And then execute:
 
 Or install it yourself as:
 
-   ~~$ gem install eve_drop_call~~
+   $ gem install specific_install
+   $ gem specific_install git@github.com:uproad/eve_drop_call.git master
 
 ## Usage
 
-TODO: Write usage instructions here
+### If you want to use in rspec.
+
+Write this...
+
+```ruby:spec_helper.rb
+RSpec.configure do |config|
+  config.before :suite do
+    EveDropCall.eavesdrop(TargetKlass)
+  end
+  config.after :suite do
+    Callstack.dump
+  end
+end
+```
+
+$ rspec spec
+$ less tmp/evedropcall_stack.log
 
 ## Development
 
