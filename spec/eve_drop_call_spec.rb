@@ -6,16 +6,14 @@ RSpec.describe EveDropCall do
   describe '#eavesdrop' do
     subject(:eavesdrop){ EveDropCall.eavesdrop(target) }
     let(:target) do
-      Class.new do
+      TargetKlass = Class.new do
         class << self
           def x
-            Callstack.puts "Target.x"
             new.x
           end
         end
 
         def x
-          Callstack.puts "Target#x"
         end
       end
     end
@@ -31,7 +29,7 @@ RSpec.describe EveDropCall do
 
       # marked call stack is expected
       # #=> p.x > t.x > p#new > p#x > t#x
-      it { expect{ target.x }.to change{ Callstack.list.size }.to(5) }
+      it { expect{ target.x }.to change{ Callstack.list.size }.to(3) }
     end
   end
 end
