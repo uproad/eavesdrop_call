@@ -1,6 +1,6 @@
 class Callstack
   OUTPUT_DIR = 'tmp/'
-  OUTPUT_FILE = 'evedropcall_stack.log'
+  OUTPUT_FILE = 'EavedropCall_stack.log'
 
   @@stack = {}
   @@max_method_name_length = 0

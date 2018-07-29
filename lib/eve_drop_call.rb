@@ -1,9 +1,9 @@
-require "eve_drop_call/version"
+require "eavesdrop_call/version"
 require "callstack"
 
 require 'fileutils'
 
-module EveDropCall
+module EavedropCall
   LOGGER = Callstack
   @@target_klass_name = nil
 

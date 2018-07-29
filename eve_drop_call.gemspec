@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "eve_drop_call/version"
+require "eavesdrop_call/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "eve_drop_call"
-  spec.version       = EveDropCall::VERSION
+  spec.name          = "eavesdrop_call"
+  spec.version       = EavedropCall::VERSION
   spec.authors       = ["uproad krowd"]
   spec.email         = ["uproad3@gmail.com"]
 
   spec.summary       = %q{A checker what Class access.}
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "https://github.com/uproad/eve_drop_call"
+  spec.homepage      = "https://github.com/uproad/eavesdrop_call"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

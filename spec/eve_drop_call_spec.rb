@@ -1,10 +1,10 @@
-RSpec.describe EveDropCall do
+RSpec.describe EavesdropCall do
   it "has a version number" do
-    expect(EveDropCall::VERSION).not_to be nil
+    expect(EavesdropCall::VERSION).not_to be nil
   end
 
   describe '#eavesdrop' do
-    subject(:eavesdrop){ EveDropCall.eavesdrop(target, File.expand_path(File.dirname(__FILE__))) }
+    subject(:eavesdrop){ EavesdropCall.eavesdrop(target, File.expand_path(File.dirname(__FILE__))) }
     let(:target) do
       TargetKlass = Class.new do
         class << self

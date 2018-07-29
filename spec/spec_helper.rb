@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "eve_drop_call"
+require "eavesdrop_call"
 
 require 'callstack'
 
