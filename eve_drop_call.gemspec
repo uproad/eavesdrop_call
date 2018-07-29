@@ -5,7 +5,7 @@ require "eavesdrop_call/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "eavesdrop_call"
-  spec.version       = EavedropCall::VERSION
+  spec.version       = EavesdropCall::VERSION
   spec.authors       = ["uproad krowd"]
   spec.email         = ["uproad3@gmail.com"]
 

@@ -1,4 +1,4 @@
-# EavedropCall
+# EavesdropCall
 
 # WIP
 You can't install this Gem by gem command. Sorry. :-)
@@ -37,7 +37,7 @@ Write this...
 
 RSpec.configure do |config|
   config.before :suite do
-    EavedropCall.eavesdrop(TargetKlass)
+    EavesdropCall.eavesdrop(TargetKlass)
   end
   config.after :suite do
     Callstack.dump
@@ -46,7 +46,7 @@ end
 ```
 
 $ rspec spec  
-$ less tmp/EavedropCall_stack.log
+$ less tmp/EavesdropCall_stack.log
 
 ## Development
 
@@ -64,4 +64,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the EavedropCall project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/eavesdrop_call/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the EavesdropCall project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/eavesdrop_call/blob/master/CODE_OF_CONDUCT.md).

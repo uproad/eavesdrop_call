@@ -3,7 +3,7 @@ require "callstack"
 
 require 'fileutils'
 
-module EavedropCall
+module EavesdropCall
   LOGGER = Callstack
   @@target_klass_name = nil
 
